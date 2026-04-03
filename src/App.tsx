@@ -27,6 +27,9 @@ import {
 
 const QUESTIONS = questionsJson as QuestionItem[];
 
+/** From `public/`; BASE_URL is required on GitHub Pages project URLs (`/repo-name/`). */
+const WORDMARK_SRC = `${import.meta.env.BASE_URL}freshworks-wordmark.svg`;
+
 /** After the test ends, refresh shows this result again (same browser tab / session). */
 const SESSION_FINAL_KEY = "bud-test-final-result";
 
@@ -331,7 +334,7 @@ export default function App() {
           <header className="bud-landing__hero">
             <img
               className="bud-brand-logo"
-              src="/freshworks-wordmark.svg"
+              src={WORDMARK_SRC}
               alt="Freshworks"
               width={200}
               height={40}
@@ -595,7 +598,7 @@ export default function App() {
           <header className="bud-test__header bud-test__header--with-brand">
             <img
               className="bud-brand-logo"
-              src="/freshworks-wordmark.svg"
+              src={WORDMARK_SRC}
               alt="Freshworks"
               width={200}
               height={40}
@@ -684,7 +687,7 @@ export default function App() {
         <header className="bud-result__header">
           <img
             className="bud-brand-logo"
-            src="/freshworks-wordmark.svg"
+            src={WORDMARK_SRC}
             alt="Freshworks"
             width={200}
             height={40}
