@@ -2,9 +2,9 @@
  * Change these when scheduling a new test window.
  * Times are interpreted in the user's local timezone unless you use UTC strings.
  */
-export const TEST_WINDOW_START = new Date("2026-04-04T02:25:00");
+export const TEST_WINDOW_START = new Date("2026-04-04T02:30:00");
 /** Official end of the test slot (informational; in-app timer uses TEST_DURATION_SECONDS). */
-export const TEST_WINDOW_END = new Date("2026-04-04T04:55:00");
+export const TEST_WINDOW_END = new Date("2026-04-04T02:35:00");
 
 /** Allowed working time on the test page (2 h 30 min = 150 min). */
 export const TEST_DURATION_SECONDS = 150 * 60;
