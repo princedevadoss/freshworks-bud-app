@@ -1,5 +1,8 @@
 # Build the Vite app and publish to GitHub Pages.
-# After the first successful run: Repo → Settings → Pages → Source: GitHub Actions.
+#
+# IMPORTANT: Repo → Settings → Pages → Source must be "GitHub Actions".
+# If you use "Deploy from a branch" with folder "/" or "/root", GitHub serves
+# your SOURCE index.html (with /src/main.tsx) → 404. This workflow uploads dist/ only.
 
 name: Deploy to GitHub Pages
 
@@ -28,7 +31,8 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          GITHUB_REPOSITORY: ${{ github.repository }}
+          # Must match repo name in https://USER.github.io/REPO/
+          VITE_BASE_PATH: /${{ github.event.repository.name }}/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
